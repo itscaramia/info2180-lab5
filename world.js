@@ -1,20 +1,17 @@
- const lookup = document.getElementById('lookup');
-    const country = document.getElementById('country');
-    const result = document.getElementById('result');
+const lookup = document.getElementById('lookup');
+const lookupCities = document.getElementById('lookup-cities');
+const country = document.getElementById('country');
+const result = document.getElementById('result');
 
-    lookup.addEventListener('click', () => {
+function search(extra = '') {
+    fetch(`world.php?country=${encodeURIComponent(country.value)}${extra}`)
+        .then(response => response.text())
+        .then(data => {
+            result.innerHTML = data;
+            result.style.display = 'block';
+        })
+        .catch(error => console.error('Error:', error));
+}
 
-        let countryName = country.value;
-
-        fetch(`world.php?country=${encodeURIComponent(countryName)}`)
-            .then(response => response.text())
-            .then(data => {
-                result.innerHTML = data;
-            
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-
-    });
-
+lookup.addEventListener('click', () => search());
+lookupCities.addEventListener('click', () => search('&lookup=cities'));

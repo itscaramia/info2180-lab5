@@ -52,6 +52,16 @@ main{
     margin-bottom: 1.5rem;
     margin-left: 15rem;
 }
+.search-row,
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.button-row button:hover {
+    background-color: #2d3748;
+}
 #country{
     flex: 1;
     max-width: 400px;
