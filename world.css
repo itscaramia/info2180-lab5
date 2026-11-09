@@ -4,7 +4,7 @@
     padding: 0;
 }
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   background-color: #41cfe5;
   color: #fcfbfb;
   display: flex;
@@ -63,4 +63,20 @@ main{
     color:black;
     padding: 1rem;
     border-radius: 6px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+th, td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+th {
+    background-color: #538cef;
+    color: #ffffff;
 }
